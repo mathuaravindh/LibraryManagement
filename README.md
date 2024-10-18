@@ -8,11 +8,9 @@ Here’s a design documentation template for your library management system that
 The Library Management System is designed to manage library operations including book lending, returning, and user management. The system supports two types of users: Librarians and Patrons. It facilitates efficient tracking of borrowing history, book availability, and searching for books.
 
 ## Class Diagram
-The system architecture is represented in the following UML class diagram:
+The system architecture is represented in the following UML class diagram: (LibraryManagement.jpg)
 
-```plaintext
-![Alt text](classdiagram/LibraryManagement.png)
-```
+![Alt text](LibraryManagement.jpg)
 
 ## Class Descriptions
 
