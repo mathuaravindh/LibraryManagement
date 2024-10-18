@@ -128,5 +128,3 @@ To use the Library Management System, follow these steps:
 This design provides a robust foundation for managing library operations efficiently. It allows easy extension and maintenance as the system grows.
 
 ---
-
-Feel free to modify any sections as needed, and add any additional information that may be relevant to your project!
