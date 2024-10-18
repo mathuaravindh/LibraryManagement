@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/src/main/java/org/airtribe/librarymanagement/book/Book.java;C:/My Files/Learning/AirTribe/LibraryManagement/src/main/java/org/airtribe/librarymanagement/book/BookStatus.java;C:/My Files/Learning/AirTribe/LibraryManagement/src/main/java/org/airtribe/librarymanagement/borrowinghistory/BorrowingHistory.java;C:/My Files/Learning/AirTribe/LibraryManagement/src/main/java/org/airtribe/librarymanagement/Main.java;C:/My Files/Learning/AirTribe/LibraryManagement/build.gradle.kts;C:/My Files/Learning/AirTribe/LibraryManagement/settings.gradle.kts" />
+  </component>
+</project>
