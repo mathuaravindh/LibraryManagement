@@ -1,7 +1,3 @@
-Here’s a design documentation template for your library management system that you can include in your `README.md`. It provides an overview of the system architecture, class descriptions, and relationships, which will help readers understand the project's structure and functionality.
-
----
-
 # Library Management System Design Documentation
 
 ## Overview
@@ -9,6 +5,8 @@ The Library Management System is designed to manage library operations including
 
 ## Class Diagram
 The system architecture is represented in the following UML class diagram: (LibraryManagement.jpg)
+
+PlantUML file is added PlantUML(ClassDiagram).txt
 
 ![Alt text](LibraryManagement.jpg)
 
