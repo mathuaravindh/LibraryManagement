@@ -1,0 +1,117 @@
+@startuml
+class User {
+    - int userId
+    - String userName
+    - String email
+    + getUserId(): int
+    + setUserId(int userId): void
+    + getUserName(): String
+    + setUserName(String userName): void
+    + getEmail(): String
+    + setEmail(String email): void
+}
+class Librarian {
+    - String employeeCode
+    + Librarian(int userId, String userName, String employeeId, String email)
+    + getEmployeeCode(): String
+    + setEmployeeId(String employeeCode): void
+}
+class Patron {
+    - ArrayList<BorrowingHistory> borrowingHistoryList
+    - final Logger logger
+    + getBorrowingHistoryList(): ArrayList<BorrowingHistory>
+    + setBorrowingHistoryList(ArrayList<BorrowingHistory> list): void
+}
+interface Logger {
+    + logInfo(String message): void
+    + logError(String message): void
+}
+class ConsoleLogger {
+    + logInfo(String message): void
+    + logError(String message): void
+}
+class Book {
+    + String title
+    + String author
+    + String isbn
+    + boolean isAvailable
+    + BookStatus status
+    + int getBookId(): int
+    + getIsbn(): String
+    + getStatus(): BookStatus
+}
+class Library {
+    - ArrayList<Book> books
+    - ArrayList<Patron> patrons
+    - Map<String, ArrayList<Book>> booksbyISBN
+    - Map<String, ArrayList<Book>> booksbyAuthor
+    - Map<String, ArrayList<Book>> booksbyTitle
+    + addBook(Book book): void
+    + addPatron(Patron patron): void
+    + getBooks(): ArrayList<Book>
+    + getPatrons(): ArrayList<Patron>
+}
+class BorrowingHistory {
+    - Book book
+    - Date checkOutDate
+    - Date dueDate
+    - Date returnDate
+    + getBook(): Book
+    + getCheckOutDate(): Date
+    + getDueDate(): Date
+    + getReturnDate(): Date
+    + setBook(Book book): void
+    + setCheckOutDate(Date checkOutDate): void
+    + setDueDate(Date dueDate): void
+    + setReturnDate(Date returnDate): void
+}
+class Lending {
+    - Library library
+    - final Logger logger
+    + Lending(Library library, Logger logger)
+    + getLibrary(): Library
+    + setLibrary(Library library): void
+    + checkOutBook(Patron patron, Book book, BorrowingHistory history): void
+    + returnBook(Patron patron, Book book): void
+    + computeDueDate(Date checkOutDate): Date
+}
+
+interface SearchStrategy {
+    + search(Library library, String searchTerm): ArrayList<Book>
+}
+class SearchByTitle {
+    + search(Library library, String searchTerm): ArrayList<Book>
+}
+class SearchByAuthor {
+    + search(Library library, String searchTerm): ArrayList<Book>
+}
+class SearchByIsbn {
+    + search(Library library, String searchTerm): ArrayList<Book>
+}
+class SearchStrategyFactory {
+    + getSearchStrategy(String type): SearchStrategy
+}
+ 
+class LibraryManagementConstants {
+    + DUE_TIME_DAYS: int
+    + LibraryManagementConstants()
+}
+
+User <|-- Patron
+User <|-- Librarian
+Logger <|-- ConsoleLogger
+Patron *-- Logger
+Library *-- Book
+Library *-- Patron
+Patron *-- BorrowingHistory
+BorrowingHistory *-- Book
+SearchStrategy <|.. SearchByTitle
+SearchStrategy <|.. SearchByAuthor
+SearchStrategy <|.. SearchByIsbn
+SearchStrategyFactory ..> SearchStrategy
+SearchStrategy o-- Library
+Lending o-- Library
+Lending o-- Logger
+Lending ..> Patron
+Lending ..> BorrowingHistory
+@enduml
